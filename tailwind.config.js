@@ -14,6 +14,12 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
     },
+    // colors:{
+    //   'heyfeedback':'#181818',
+    //   'heyfeedback-hover':"#151515",
+    //   'MVP':'#090909',
+    //   'form':'#0f0f0f'
+    // }
   },
-  plugins: [],
+  plugins: [require("daisyui")],
 }
