@@ -19,7 +19,7 @@ const Navbar = () => {
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-4 mt-4 ">
         <div className="w-10 rounded-full shadow-md shadow-blue-500/50">
-          <img className="shadow-lg shadow-blue-500/50" src={session.user.image} alt={session.user.image}/>
+          <img src={session.user.image} alt={session.user.image}/>
         </div>
       </label>
       <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li><a>Settings</a></li>
-        <li><button onClick={() => {signOut()}}>Logout</button></li>
+        <li><button onClick={() => {signOut()}}>Sign Out</button></li>
       </ul>
     </div>
   </div>
