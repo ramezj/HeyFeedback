@@ -9,7 +9,8 @@ const Button = (props) => {
     shadow-indigo-500/20
     text-indigo-100 
     bg-indigo-600 
-    focus:outline-none 
+    focus:outline-none
+    focus:ring-none 
     font-bold 
     rounded-lg 
     text-lg 
