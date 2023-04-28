@@ -21,6 +21,7 @@ const App = () => {
     <center>
     <ProfileCard />
     <br></br>
+    <br></br>
     <User />
     </center>
     </div>
