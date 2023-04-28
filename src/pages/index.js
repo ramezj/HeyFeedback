@@ -7,10 +7,11 @@ import Jumbotron from '@/Components/Jumbotron';
 
 export default function Home() {
   return (
-    <div class="h-full min-h-screen bg-[#090909]">
+  <div class="h-full min-h-screen bg-[#090909]">
   <Navbar/>
   <br></br>
   <Jumbotron />
+  <br></br>
     </div>
   )
 }
