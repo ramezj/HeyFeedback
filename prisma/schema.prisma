@@ -23,7 +23,12 @@ model Account {
   scope              String?
   id_token           String? @db.Text
   session_state      String?
-
+  isSubscribed Boolean @default(false)
+  subscription_id String @default("")
+  subscription_update_url String @default("")
+  subscription_cancel_url String @default("")
+  websiteUrl String @default("")
+  subscription_plan_id Int @default(0)
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
@@ -47,12 +52,6 @@ model User {
   emailVerified DateTime? @map("email_verified")
   createdAt DateTime @default(now())
   image         String?
-  isSubscribed Boolean @default(false)
-  subscription_id String @default("")
-  subscription_update_url String @default("")
-  subscription_cancel_url String @default("")
-  websiteUrl String @default("")
-  subscription_plan_id Int @default(0)
   accounts      Account[]
   sessions      Session[]
   feedbacks     Feedback[]
