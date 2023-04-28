@@ -12,6 +12,7 @@ const Badge = (props) => {
     rounded-full 
     dark:bg-indigo-600 
     dark:text-indigo-100
+    shadow-lg
     ">
     {props.text}
     </span>

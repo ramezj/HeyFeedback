@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
+import Button  from '../Button';
 
 const ProfileCard = () => {
   const { data: session, status } = useSession()
@@ -13,8 +14,8 @@ const ProfileCard = () => {
         <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{session.user.name}</h5>
         <span class="text-sm text-gray-500 dark:text-gray-400">{session.user.email}</span>
         <div class="flex mt-4 space-x-3 md:mt-6">
-        <button type="button" class="font-bold text-lg flex items-center justify-center shadow-md shadow-teal-500/20 text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 shadow-xl px-8 py-2 tracking-wide capitalize transition-colors transform rounded-lg">Upgrade </button>
-        <button type="button" class="font-bold text-lg flex items-center justify-center shadow-md shadow-teal-500/20 text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 shadow-xl px-8 py-2 tracking-wide capitalize transition-colors transform rounded-lg">Sign Out </button>
+        <Button title="Hello"/>
+        <Button title="Hello"/>
         </div>
     </div>
 </div>

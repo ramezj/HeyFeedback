@@ -13,7 +13,11 @@ const User = () => {
     <h1>Loading your amazing feedback</h1>
     </>
   )
-  return <div>{JSON.stringify(data.data)}</div>
+  return  (
+    <>
+    {JSON.stringify(data.data)}
+    </>
+    )
 }
 
 export default User
