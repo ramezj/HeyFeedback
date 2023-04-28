@@ -16,7 +16,7 @@ export default function Home() {
     transition={{
       duration:1
     }}
-    class="h-full min-h-screen bg-[#050505]"
+    className="h-full min-h-screen bg-[#050505]"
     >
   <Navbar/>
   <br></br>
