@@ -45,7 +45,7 @@ const Navbar = () => {
     <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4">HeyFeedback</a>
   </div>
   <div className="navbar-end">
-  <Button title="Get Started" onClick={() => {signIn("google")}}  />
+  <Button title="Get Started" onClick={() => {signIn("google", { callbackUrl: '/App' })}}  />
   </div>
 </div>
             </>
