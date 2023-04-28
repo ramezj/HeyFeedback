@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useSession } from "next-auth/react"
-import { signIn } from "next-auth/react"
+import { signIn, signOut } from "next-auth/react"
 import "flowbite";
 import Button from '../Components/Button';
 import Link from 'next/link'
@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li><a>Settings</a></li>
-        <li><a>Logout</a></li>
+        <li><button onClick={() => {signOut()}}>Logout</button></li>
       </ul>
     </div>
   </div>
