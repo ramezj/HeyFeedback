@@ -47,9 +47,9 @@ const Navbar = () => {
   <div className="navbar-end">
   <div class="relative group mt-3 mr-3 cursor-pointer">
     <button onClick={() => {signIn("google", { callbackUrl:"/App"})}}>
-    <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
+    <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-200 to-lime-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
       </div>
-      <div class="relative px-10 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-lg text-lg font-bold">
+      <div class="relative px-10 py-3 bg-gradient-to-r from-teal-200 to-lime-200 text-gray-900 rounded-lg text-lg font-bold">
         Get Started</div>
         </button>
         </div>

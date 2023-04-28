@@ -9,6 +9,7 @@ const User = () => {
   if (error) return <div>failed to load</div>
   if (isLoading) return (
     <>
+    <div><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.2s]"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.4s]"></span></div>
     <h1>Loading your amazing feedback</h1>
     </>
   )
