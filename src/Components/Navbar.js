@@ -11,7 +11,7 @@ const Navbar = () => {
         console.log(session)
         return (
             <>
-            <div className="navbar bg-[#090909]">
+            <div className="navbar bg-[#050505]">
   <div className="flex-1">
     <Link className="btn btn-ghost normal-case text-2xl mt-4 ml-4" href="/">HeyFeedback</Link>
   </div>
@@ -40,19 +40,12 @@ const Navbar = () => {
       } else {
         return (
             <>
-            <div className="navbar bg-[#090909]">
+            <div className="navbar bg-[#050505]">
   <div className="navbar-start">
     <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4">HeyFeedback</a>
   </div>
   <div className="navbar-end">
-  <div class="relative group mt-3 mr-3 cursor-pointer">
-    <button onClick={() => {signIn("google", { callbackUrl:"/App"})}}>
-    <div class="absolute -inset-0.5 bg-gradient-to-r from-teal-200 to-lime-200 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt">
-      </div>
-      <div class="relative px-10 py-3 bg-gradient-to-r from-teal-200 to-lime-200 text-gray-900 rounded-lg text-lg font-bold">
-        Get Started</div>
-        </button>
-        </div>
+  <Button title="Sign in" onClick={() => {signIn("google", { callbackUrl: '/App' })}}  />
   </div>
 </div>
             </>

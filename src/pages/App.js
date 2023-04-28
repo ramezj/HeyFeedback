@@ -4,6 +4,7 @@ import Navbar from '../Components/Navbar';
 import { useRouter } from 'next/router';
 import ProfileCard from '../Components/App/ProfileCard';
 import User from '../Components/App/User';
+import { motion } from 'framer-motion';
 
 const App = () => {
   const { data: session, status } = useSession({
@@ -15,7 +16,15 @@ const App = () => {
   })
   const router = useRouter();
   return (
-    <div class="h-full min-h-screen bg-[#090909]">
+    <motion.div 
+    initial={{opacity: 0 }}
+    animate={{opacity: 1 }}
+    exit={{opacity: 0 }}
+    transition={{
+      duration:1
+    }}
+    class="h-full min-h-screen bg-[#050505]"
+    >
     <Navbar />
     <br></br>
     <center>
@@ -24,7 +33,7 @@ const App = () => {
     <br></br>
     <User />
     </center>
-    </div>
+    </motion.div>
   )
 }
 
