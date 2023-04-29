@@ -53,6 +53,13 @@ export default async function handler(req, res) {
                     error:error
                 })
             }
+        } 
+        else {
+            return res.json({
+                ok:false,
+                data:null,
+                HeyFeedbackError:"Wrong User ID"
+            })
         }
     } catch (error) {
         console.error(error);
@@ -61,8 +68,4 @@ export default async function handler(req, res) {
             HeyFeedbackError:"Wrong User ID"
         })
     }
-    return res.json({
-        ok:false,
-        data:null
-    })
  }
