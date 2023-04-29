@@ -1,11 +1,19 @@
 import React from 'react'
 import Button from '../Components/Button';
 import Badge from '../Components/Badge';
+import { motion } from 'framer-motion';
 
 const Features = () => {
   return (
     <section class="">
-    <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+    <motion.div 
+    initial={{opacity: 0 }}
+    animate={{opacity: 1 }}
+    exit={{opacity: 0 }}
+    transition={{
+      duration:3
+    }}
+    class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
         <div class="bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12 mb-8">
             <a href="#" class="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2">
                 <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -13,7 +21,7 @@ const Features = () => {
                 </svg>
                 Tutorial
             </a>
-            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Made by developers, for developers</h1>
+            <h1 class="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">Made by developers, for developers.</h1>
             <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
             <Button title="Get Started"/>
         </div>
@@ -49,7 +57,7 @@ const Features = () => {
                 </a>
             </div>
         </div>
-    </div>
+    </motion.div>
 </section>
   )
 }
