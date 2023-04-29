@@ -55,15 +55,19 @@ model User {
   accounts      Account[]
   sessions      Session[]
   feedbacks     Feedback[]
-
   @@map("users")
 }
-
 model Feedback {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  userId       String   @map("user_id") 
   body String
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  rating Int
+  createdAt DateTime @default(now())
+  email String @default("")
+  ipAddress String @default("0.0.0.0")
+  geo String @default("")
+  userAgent String @default("")
+  userId String
+  user User @relation(fields: [userId], references: [id])
 }
 
 // model VerificationToken {

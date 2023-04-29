@@ -3,7 +3,7 @@ import React from 'react'
 const Badge = (props) => {
   return (
     <span 
-    class="bg-indigo-100 
+    className="bg-indigo-100 
     text-indigo-800 
     text-md 
     font-medium 

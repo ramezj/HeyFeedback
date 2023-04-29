@@ -15,7 +15,8 @@ export default async function handler(req, res) {
         console.log(userFeedbacks);
         res.status(200).json({
             ok:true,
-            data:userFeedbacks
+            data:userFeedbacks,
+            id:session.user.id
         })
     } else {
         res.status(401).json({

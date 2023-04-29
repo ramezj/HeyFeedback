@@ -16,6 +16,7 @@ const User = () => {
   return  (
     <>
     {JSON.stringify(data.data)}
+    {JSON.stringify(data.id)}
     </>
     )
 }

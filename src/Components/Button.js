@@ -5,7 +5,7 @@ const Button = (props) => {
     <button 
     onClick={props.onClick} 
     type="button" 
-    class="shadow-md
+    className="shadow-md
     text-indigo-100 
     bg-indigo-600 
     focus:outline-none
