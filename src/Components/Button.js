@@ -6,7 +6,6 @@ const Button = (props) => {
     onClick={props.onClick} 
     type="button" 
     class="shadow-md
-    shadow-indigo-500/20
     text-indigo-100 
     bg-indigo-600 
     focus:outline-none

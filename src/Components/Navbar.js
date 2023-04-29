@@ -11,14 +11,14 @@ const Navbar = () => {
         console.log(session)
         return (
             <>
-            <div className="navbar bg-[#050505]">
+  <div className="navbar bg-transparent">
   <div className="flex-1">
     <Link className="btn btn-ghost normal-case text-2xl mt-4 ml-4" href="/">HeyFeedback</Link>
   </div>
   <div className="flex-none gap-2">
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-4 mt-4 ">
-        <div className="w-10 rounded-full shadow-md shadow-blue-500/50">
+        <div className="w-10 rounded-full">
           <img src={session.user.image} alt={session.user.image}/>
         </div>
       </label>
@@ -40,7 +40,7 @@ const Navbar = () => {
       } else {
         return (
             <>
-            <div className="navbar bg-[#050505]">
+            <div className="navbar bg-bg-transparent">
   <div className="navbar-start">
     <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4">HeyFeedback</a>
   </div>
