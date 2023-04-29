@@ -6,6 +6,7 @@ import Navbar from "../Components/Navbar";
 import Jumbotron from '@/Components/Jumbotron';
 import { motion } from 'framer-motion';
 import Badge from '../Components/Badge';
+import Features from '../Components/Features';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
   </center>
   <Jumbotron />
   <br></br>
+  <Features />
   </motion.div>
   )
 }
