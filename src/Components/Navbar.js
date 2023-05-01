@@ -30,7 +30,7 @@ const Navbar = () => {
           </Link>
         </li>
         <li><a>Settings</a></li>
-        <li><button onClick={() => {signOut()}}>Sign Out</button></li>
+        <li><button onClick={() => {signOut({ callbackUrl: '/' })}}>Sign Out</button></li>
       </ul>
     </div>
   </div>
