@@ -33,6 +33,7 @@ const App = () => {
     <br></br>
     <User />
     </center>
+    <br></br>
     </motion.div>
   )
 }
