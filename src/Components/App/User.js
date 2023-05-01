@@ -16,7 +16,7 @@ const User = () => {
   })
   const router = useRouter();
   const [ data, setData ] = useState();
-  const [ loading, setLoading ] = useState()
+  const [ loading, setLoading ] = useState(true)
   const [ error, setError ] = useState()
   useEffect(() => {
     setLoading(true);
