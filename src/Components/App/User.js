@@ -23,16 +23,12 @@ const User = () => {
     const fetchData = async () => {
       const res = await fetch('/api/User');
       const resJSON = await res.json();
-      setLoading(false);
-      if(data.ok == false) {
-        setError(resJSON);
-      }
       setData(resJSON);
+      setLoading(false);
     }
-
     fetchData();
   }, [])
-  if (loading) return (
+  if (loading || loading == true) return (
     <>
     <div><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.2s]"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.4s]"></span></div>
     <h1>Loading your amazing feedback</h1>
