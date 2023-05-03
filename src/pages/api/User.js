@@ -13,10 +13,16 @@ export default async function handler(req, res) {
                 userId: session.user.id
             }
         })
-        console.log(userFeedbacks);
+        const userInfo = await prisma.user.findUnique({
+            where:{ 
+                id: session.user.id
+            }
+        })
+        console.log(userInfo);
         res.status(200).json({
             ok:true,
-            data:userFeedbacks
+            data:userFeedbacks,
+            user:userInfo
         })
     } else {
         res.status(401).json({
@@ -25,4 +31,3 @@ export default async function handler(req, res) {
         })
     }
   }
-  

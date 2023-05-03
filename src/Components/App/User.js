@@ -35,7 +35,11 @@ const User = () => {
   )
   return  (
     <>
-    <motion.div className="flex flex-wrap gap-5 justify-center w-4/5">
+    {
+      data.user.isSubscribed 
+      ? 
+      <> 
+      <motion.div className="flex flex-wrap gap-5 justify-center w-4/5">
     {
       data.data.map((x) => {
         return (
@@ -61,6 +65,27 @@ const User = () => {
       })
     }
     </motion.div>
+      </>
+      : 
+      <> 
+      <motion.div 
+    whileHover={{
+        scale:1.1
+    }}
+    className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700">
+               <a href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                </a>
+                <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                <img src={"https://flagcdn.com/eg.svg"} width="25" alt="Country Flag" />
+                  <p>192.168.1.1</p>
+                </div>
+    <br></br>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Hey@Feedback.pro</h5>
+          <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">This is what your user feedback will look like.</p>
+          <Button title="Reply With email" onClick={() => {window.location = "mailto:user@heyfeedback.com"}}/>
+          </motion.div>
+      </>
+    }
     </>
     )
 }
