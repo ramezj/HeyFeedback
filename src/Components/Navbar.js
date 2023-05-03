@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSession } from "next-auth/react"
 import { signIn, signOut } from "next-auth/react"
 import "flowbite";
-import Button from '../Components/Button';
+import { motion } from "framer-motion"; 
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -45,10 +45,28 @@ const Navbar = () => {
     <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4">HeyFeedback</a>
   </div>
   <div className="navbar-end">
-  <Button title="Sign in" onClick={() => {signIn("google", { callbackUrl: '/App' })}}  />
+  <motion.button onClick={() => {signIn("google", { callbackUrl: '/App' })}} className="shadow-md
+    text-indigo-100 
+    bg-indigo-600 
+    focus:outline-none
+    focus:ring-none 
+    font-bold 
+    rounded-lg 
+    text-lg 
+    px-10 py-2.5 
+    text-center 
+    mr-4 mt-4 
+    hover:bg-indigo-500 
+    duration-500"
+    whileHover={{
+      y:-3
+    }}
+    >
+    Sign In
+  </motion.button>
   </div>
 </div>
-            </>
+</>
         )
       }
 }

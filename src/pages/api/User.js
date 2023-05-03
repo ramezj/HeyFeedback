@@ -3,6 +3,7 @@ import { authOptions } from './auth/[...nextauth]'
 import { PrismaClient } from '@prisma/client'
 
 export default async function handler(req, res) {
+    // Retreive User data.
     const session = await getServerSession(req, res, authOptions);
     const prisma = new PrismaClient();
     if (session) {

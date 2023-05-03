@@ -5,7 +5,6 @@ import { useSession, signIn, signOut } from "next-auth/react"
 import Navbar from "../Components/Navbar";
 import Jumbotron from '@/Components/Jumbotron';
 import { motion } from 'framer-motion';
-import Badge from '../Components/Badge';
 import Features from '../Components/Features';
 
 export default function Home() {
@@ -22,12 +21,8 @@ export default function Home() {
   <Navbar/>
   <br></br>
   <center>
-  <div>
-  <Badge text="Introducing HeyFeedback 1.0"/>
-  </div>
   </center>
   <Jumbotron />
-  <br></br>
   <Features />
   </motion.div>
   )

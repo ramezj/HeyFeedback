@@ -2,6 +2,7 @@ import { NextRequest } from 'next/server'
 import { PrismaClient } from '@prisma/client';
 
 export default async function handler(req, res) {
+    // Route to receive feedback.
     const prisma = new PrismaClient();
     const { id } = req.query;
     const { body, method } = req;
