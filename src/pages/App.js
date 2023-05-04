@@ -14,6 +14,22 @@ const App = () => {
       router.push('/')
     }
   })
+  const submitData = async () => {
+    const res = await fetch('/api/receive?id=644c3ead88e5896ba0194013', {
+      method:'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        body:'testing userAgent',
+        rating:1,
+        email:"ramezsocials@gmail.com",
+      })
+    })
+    const response = await res.json();
+    console.log(response);
+   }
   const router = useRouter();
   return (
     <motion.div 
@@ -31,6 +47,7 @@ const App = () => {
     <ProfileCard />
     <br></br>
     <br></br>
+    <button onClick={submitData}>Testing Data</button>
     <User />
     </center>
     <br></br>

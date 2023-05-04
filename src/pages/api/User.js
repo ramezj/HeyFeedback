@@ -6,7 +6,6 @@ export default async function handler(req, res) {
     // Retreive User data.
     const session = await getServerSession(req, res, authOptions);
     if (session) {
-        console.log(session);
         const userFeedbacks = await prisma.feedback.findMany({
             where: {
                 userId: session.user.id
@@ -17,7 +16,6 @@ export default async function handler(req, res) {
                 id: session.user.id
             }
         })
-        console.log(userInfo);
         res.status(200).json({
             ok:true,
             data:userFeedbacks,
