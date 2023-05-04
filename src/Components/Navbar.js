@@ -57,11 +57,8 @@ const Navbar = () => {
     mr-4 mt-4 
     hover:bg-indigo-500 
     duration-500"
-    whileHover={{
-      y:-3
-    }}
     >
-    Sign In
+    Try For Free
   </motion.button>
   </div>
 </div>

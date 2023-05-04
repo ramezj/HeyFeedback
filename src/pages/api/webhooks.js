@@ -2,9 +2,10 @@ import { getServerSession } from "next-auth/next"
 import { authOptions } from './auth/[...nextauth]'
 import { PrismaClient } from '@prisma/client'
 
+const prisma = new PrismaClient();
+
 export default async function handler(req, res) {
     // Webhooks to accept payments.
-    const prisma = new PrismaClient();
     const { body, method } = req;
     if(method !== "POST") {
       return res.status(405).json({
