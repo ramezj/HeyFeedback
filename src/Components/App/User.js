@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useSession, signIn, signOut } from "next-auth/react"
-import useSWR from 'swr'
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Button from '../Button';
-import { Suspense } from 'react';
-import Skeleton from '../Skeleton'
 
 const User = ({response}) => {
   const router = useRouter();
