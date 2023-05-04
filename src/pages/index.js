@@ -29,6 +29,8 @@ export default function Home() {
   <center>
   <SendFeedback />
   </center>
+  <br></br>
+  <br></br>
   </motion.div>
   )
 }
