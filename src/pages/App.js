@@ -31,28 +31,30 @@ const App = () => {
     const response = await res.json();
     console.log(response);
    }
-  return (
-    <motion.div 
-    initial={{opacity: 0 }}
-    animate={{opacity: 1 }}
-    exit={{opacity: 0 }}
-    transition={{
-      duration:1
-    }}
-    class="h-full min-h-screen bg-[#050505]"
-    >
-    <Navbar />
-    <br></br>
-    <center>
-    <ProfileCard />
-    <br></br>
-    <br></br>
-    <button onClick={submitData}>Testing Data</button>
-    <User />
-    </center>
-    <br></br>
-    </motion.div>
-  )
+   if (status == "authenticated") {
+    return (
+      <motion.div 
+      initial={{opacity: 0 }}
+      animate={{opacity: 1 }}
+      exit={{opacity: 0 }}
+      transition={{
+        duration:1
+      }}
+      class="h-full min-h-screen bg-[#050505]"
+      >
+      <Navbar />
+      <br></br>
+      <center>
+      <ProfileCard />
+      <br></br>
+      <br></br>
+      <button onClick={submitData}>Testing Data</button>
+      <User />
+      </center>
+      <br></br>
+      </motion.div>
+    )
+   }
 }
 
 export default App
