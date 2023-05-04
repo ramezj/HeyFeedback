@@ -4,8 +4,10 @@ import useSWR from 'swr'
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Button from '../Button';
+import { Suspense } from 'react';
+import Skeleton from '../Skeleton'
 
-const User = () => {
+const User = ({response}) => {
   const router = useRouter();
   const { data: session, status } = useSession({
     // Redirect User if Unauthenticated
@@ -36,8 +38,7 @@ const User = () => {
   }
   if (loading || loading == true) return (
     <>
-    <div><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.2s]"></span><span class="w-2 h-2 ml-2 rounded-full bg-gray-200 inline-block animate-flash [animation-delay:0.4s]"></span></div>
-    <h1>Loading your amazing feedback</h1>
+    <h1 className="font-bold text-3xl">🐟 This shouldnt take long</h1>
     </>
   )
   return  (
@@ -58,9 +59,9 @@ const User = () => {
     className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700">
                <a href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                 </a>
-                <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
+                {/* <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                   <p> {x.userAgent}</p>
-                </div>
+                </div> */}
                 <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                 <img src={"https://flagcdn.com/" + x.geo.toLowerCase() + ".svg"} width="25" alt="Country Flag" />
                   <p> {x.ipAddress}</p>

@@ -24,6 +24,7 @@ export default function Home() {
   </center>
   <Jumbotron />
   <Features />
+  <br></br>
   </motion.div>
   )
 }
