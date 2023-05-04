@@ -7,6 +7,7 @@ import User from '../Components/App/User';
 import { motion } from 'framer-motion';
 
 const App = () => {
+  const router = useRouter();
   const { data: session, status } = useSession({
     // Redirect User if Unauthenticated
     required:true,
@@ -30,7 +31,6 @@ const App = () => {
     const response = await res.json();
     console.log(response);
    }
-  const router = useRouter();
   return (
     <motion.div 
     initial={{opacity: 0 }}

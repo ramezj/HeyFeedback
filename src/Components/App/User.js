@@ -7,6 +7,13 @@ import Button from '../Button';
 
 const User = () => {
   const router = useRouter();
+  const { data: session, status } = useSession({
+    // Redirect User if Unauthenticated
+    required:true,
+    onUnauthenticated() {
+      router.push('/')
+    }
+  })
   const [ data, setData ] = useState();
   const [ loading, setLoading ] = useState(true)
   const [ error, setError ] = useState()
