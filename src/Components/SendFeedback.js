@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const SendFeedback = () => {
     const [ send, setSend ] = useState("Send Feedback")
-    const [ body, setBody ] = useState("test");
+    const [ body, setBody ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ rating, setRating ] = useState(1);
     const sendRequest = async () => {
@@ -41,7 +41,8 @@ const SendFeedback = () => {
     value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Ali@Instatus.com'
     />
     <br></br><br></br>
-    <textarea placeholder="We would love to hear your feedback" rows="3" className="textarea textarea-bordered textarea-sm w-full max-w-xs bg-[#0c0c0c] outline-none border-none font-bold focus:border-none focus:outline-none"/>
+    <textarea placeholder="We would love to hear your feedback" rows="3" className="textarea textarea-bordered textarea-sm w-full max-w-xs bg-[#0c0c0c] outline-none border-none font-bold focus:border-none focus:outline-none"
+    value={body} onChange={(e) => setBody(e.target.value)}/>
     <button 
     type="button" 
     className="shadow-md
