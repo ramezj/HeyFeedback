@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import React, { useState, useRef } from 'react'
+import { motion, useInView } from 'framer-motion'
 
 const SendFeedback = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once:true});
     const [ send, setSend ] = useState("Send Feedback")
     const [ body, setBody ] = useState("");
     const [ email, setEmail ] = useState("");
@@ -29,7 +31,6 @@ const SendFeedback = () => {
           }
     }
   return (
-    <>
     <motion.div 
     whileHover={{
         scale:1.1
@@ -63,7 +64,6 @@ const SendFeedback = () => {
     {send}
     </button>
     </motion.div>
-    </>
   )
 }
 

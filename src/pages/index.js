@@ -1,10 +1,10 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react"
 import Navbar from "../Components/Navbar";
 import Jumbotron from '@/Components/Jumbotron';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import Features from '../Components/Features';
 import SendFeedback from '../Components/SendFeedback';
 
