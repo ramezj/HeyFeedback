@@ -22,7 +22,7 @@ const Navbar = () => {
           <img src={session.user.image} alt={session.user.image}/>
         </div>
       </label>
-      <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+      <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] rounded-box w-52">
         <li>
           <Link className="justify-between" href="/App">
             App
