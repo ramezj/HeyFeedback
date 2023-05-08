@@ -35,7 +35,7 @@ const User = ( props, userData ) => {
   }
   if (loading || loading == true) return (
     <>
-    <h1 className="font-bold text-3xl">🐟 This shouldnt take long</h1>
+    <h1 className="font-bold text-3xl">🌎 This shouldnt take long</h1>
     </>
   )
   return  (
