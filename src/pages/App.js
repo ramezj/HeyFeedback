@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, getSession, signIn, signOut } from "next-auth/react"
 import Navbar from '../Components/Navbar';
 import { useRouter } from 'next/router';
 import ProfileCard from '../Components/App/ProfileCard';
 import User from '../Components/App/User';
 import { motion } from 'framer-motion';
+import Layout from "../Components/App/Layout";
 
-const App = () => {
+const App = ({ data }) => {
   const router = useRouter();
   const { data: session, status } = useSession({
     // Redirect User if Unauthenticated
@@ -29,15 +30,31 @@ const App = () => {
       <Navbar />
       <br></br>
       <center>
-      <ProfileCard />
       <br></br>
       <br></br>
-      <User />
+      <Layout />
       </center>
       <br></br>
       </motion.div>
     )
    }
+}
+
+export async function getServerSideProps(context) {
+const session = await getSession(context);
+  if(!session) {
+    return {
+      redirect: {
+      destination: '/test'
+      }
+    }
+  } 
+  return {
+    props: {
+      session,
+      data:session
+    }
+  }
 }
 
 export default App

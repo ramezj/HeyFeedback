@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import { useSession, signIn, signOut } from "next-auth/react"
+import { useSession, getSession } from "next-auth/react"
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 import Button from '../Button';
 
-const User = ({response}) => {
+const User = ( props, userData ) => {
   const router = useRouter();
   const { data: session, status } = useSession({
     // Redirect User if Unauthenticated
@@ -44,16 +44,13 @@ const User = ({response}) => {
       data.user.isSubscribed 
       ? 
       <> 
-      <motion.div className="flex flex-wrap gap-5 justify-center w-4/5">
+      <motion.div className="flex flex-wrap gap-8 justify-center w-full">
     {
       data.data.map((x) => {
         return (
           <> 
-          <motion.div 
-    whileHover={{
-        scale:1.1
-    }}
-    className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700 items-center">
+          <motion.div whileHover={{scale:1.1}}
+            className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700 items-center">
                <a href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                 </a>
                 {/* <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
@@ -95,7 +92,7 @@ const User = ({response}) => {
       </>
     }
     </>
-    )
+  )
 }
 
 export default User

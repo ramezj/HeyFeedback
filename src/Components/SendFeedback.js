@@ -44,6 +44,15 @@ const SendFeedback = () => {
     <br></br><br></br>
     <textarea placeholder="We would love to hear your feedback" rows="3" className="textarea textarea-bordered textarea-sm w-full max-w-xs bg-[#0c0c0c] outline-none border-none font-bold focus:border-none focus:outline-none"
     value={body} onChange={(e) => setBody(e.target.value)}/>
+    <br></br><br></br>
+    <div className="space-x-4">
+    <button className="shadow-lg shadow-yellow-500/50 rounded-3xl text-4xl">😊</button>
+    <button className="shadow-lg shadow-yellow-500/50 rounded-3xl text-4xl">😊</button>
+    <button className="shadow-lg shadow-yellow-500/50 rounded-3xl text-4xl">😊</button>
+    <button className="shadow-lg shadow-yellow-500/50 rounded-3xl text-4xl">😊</button>
+    <button className="shadow-lg shadow-yellow-500/50 rounded-3xl text-4xl">😊</button>
+    </div>
+    <br></br>
     <button 
     type="button" 
     className="shadow-md
