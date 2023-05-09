@@ -45,7 +45,7 @@ const session = await getSession(context);
   if(!session) {
     return {
       redirect: {
-      destination: '/test'
+      destination: '/'
       }
     }
   } 
