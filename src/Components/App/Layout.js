@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import motion from "framer-motion"
 import { useSession, getSession } from "next-auth/react"
 import { useRouter } from 'next/router';
@@ -7,6 +7,10 @@ import Link from "next/link"
 
 const Layout = () => {
    const router = useRouter();
+   const [ user, setUser ] = useState();
+   const [ premium, setPremium ] = useState(false);
+   console.log("user :", user);
+   console.log("premium :", premium);
    const { data: session, status } = useSession({
      // Redirect User if Unauthenticated
      required:true,
@@ -14,6 +18,15 @@ const Layout = () => {
        router.push('/')
      }
    })
+   useEffect(() => {
+      const checkUser = async () => {
+         const res = await fetch('/api/User');
+         const data = await res.json();
+         setUser(data);
+         setPremium(data.user.isSubscribed);
+      }
+      checkUser();
+   }, [])
   return (
     <div className="h-full min-h-screen bg-[#050505]"> 
 {/* <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar" aria-controls="default-sidebar" type="button" class="inline-flex items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
@@ -36,10 +49,21 @@ const Layout = () => {
             </Link>
          </li>
          <li>
-            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#0e0e0e] dark:hover:bg-[#0e0e0e]">
+            {
+               premium 
+               ? <>
+               <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#0e0e0e] dark:hover:bg-[#0e0e0e]">
+               <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+               <span class="flex-1 ml-3 whitespace-nowrap">Premium</span>
+               </a>
+               </>
+               : <>
+               <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#0e0e0e] dark:hover:bg-[#0e0e0e]">
                <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
                <span class="flex-1 ml-3 whitespace-nowrap">Upgrade Account</span>
-            </a>
+               </a>
+               </>
+            }
          </li>
          <li>
             <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-[#0e0e0e] dark:hover:bg-[#0e0e0e]">
