@@ -1,7 +1,6 @@
 import { NextRequest } from 'next/server'
 import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { prisma } from './utils/db'
 
 export default async function handler(req, res) {
     // Route to receive feedback.

@@ -36,7 +36,7 @@ const SendFeedback = () => {
         scale:1.1
     }}
     className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700">
-    <h1 className="font-extrabold text-2xl">Tell us anything!</h1>
+    <h1 className="font-extrabold text-2xl">Tell us anything</h1>
     <br></br>
     <input type="text" className="input border-none outline-none focus:border-none focus:outline-none bg-[#0c0c0c] w-full max-w-xs font-bold" 
     value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Ali@Instatus.com'
