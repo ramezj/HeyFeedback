@@ -72,7 +72,5 @@ export default async function handler(req, res) {
         })
       }
     }
-    console.log(req.body);
-    res.status(202).json(req.body)
   }
   
