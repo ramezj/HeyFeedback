@@ -16,7 +16,7 @@ return (
             scale:1.1
         }}
         type="button" className="font-extrabold text-xl flex items-center justify-center text-gray-900 bg-white shadow-lg shadow-indigo-500/60 px-20 py-4 tracking-wide capitalize transition-colors transform rounded-lg">
-            🚀 Get Started
+            🚀 Get Started 
             </motion.button>
         </div>
     </div>
