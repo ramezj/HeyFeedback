@@ -13,7 +13,7 @@ const Navbar = () => {
             <>
   <div className="navbar bg-transparent">
   <div className="flex-1">
-    <Link className="btn btn-ghost normal-case text-2xl mt-4 ml-4" href="/">HeyFeedback</Link>
+    <Link className="btn btn-ghost normal-case text-2xl mt-4 ml-4 font-bold" href="/">HeyFeedback</Link>
   </div>
   <div className="flex-none gap-2">
     <div className="dropdown dropdown-end">
@@ -41,7 +41,7 @@ const Navbar = () => {
             <>
             <div className="navbar bg-bg-transparent">
   <div className="navbar-start">
-    <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4">HeyFeedback</a>
+    <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4 font-bold">HeyFeedback</a>
   </div>
   <div className="navbar-end">
   <motion.button onClick={() => {signIn("google", { callbackUrl: '/App' })}} className="shadow-md
