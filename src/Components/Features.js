@@ -11,7 +11,7 @@ const Features = () => {
     animate={{opacity: 1 }}
     exit={{opacity: 0 }}
     transition={{
-      duration:3
+      duration:1.5
     }}
     class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
         <motion.div class="bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12 mb-8 shadow shadow-lg"
