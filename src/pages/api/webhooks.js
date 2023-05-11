@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     //     })
     //   }
     // }
-    if(req.body.subscription_created) {
+    if(req.body.alert_name == "subscription_created") {
       res.status(200).json({ok:true});
       console.log(req.body)
       console.log(req.body.passthrough);
