@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from "framer-motion"
+import { signIn, signOut } from "next-auth/react"
 
 const Jumbotron = () => {
 return (
@@ -15,6 +16,7 @@ return (
         whileHover={{
             scale:1.1
         }}
+        onClick={() => {signIn("google", { callbackUrl: '/App' })}}
         type="button" className="font-extrabold text-xl flex items-center justify-center text-gray-900 bg-white shadow-lg shadow-indigo-500/60 px-20 py-4 tracking-wide capitalize transition-colors transform rounded-lg">
             🚀 Get Started 
             </motion.button>
