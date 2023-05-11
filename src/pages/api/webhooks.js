@@ -54,17 +54,16 @@ export default async function handler(req, res) {
             subscription_cancel_url:req.body.cancel_url,
           }
         });
-        if(updateUser) {
-          return res.status(200).json({
-            ok:true,
-            data: "Subscribed Successfully!"
-          })
-        } else {
+        if(!updateUser) {
           return res.status(400).json({
             ok:false,
-            data: "Couldn't Upgrade Subscription"
+            data: "couldnt find user"
           })
-        }
+        } 
+        return res.status(200).json({
+          ok:false,
+          data:"Subscribed Successfully.."
+        })
       } catch (error) {
         return res.status(404).json({
           ok:false,
