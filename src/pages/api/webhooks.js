@@ -43,9 +43,12 @@ export default async function handler(req, res) {
     // }
     if(req.body.alert_name == "subscription_created") {
       try {
-        const user = await prisma.user.findUnique({
+        const user = await prisma.user.update({
           where: {
             id:req.body.passthrough
+          },
+          data: {
+            isSubscribed:true
           }
         })
         if(!user) {
