@@ -42,10 +42,29 @@ export default async function handler(req, res) {
     //   }
     // }
     if(req.body.alert_name == "subscription_created") {
-      res.status(200).json({ok:true});
-      console.log(req.body)
-      console.log(req.body.passthrough);
-      console.log(req.body.email);
+      try {
+        const user = await prisma.user.findUnique({
+          where: {
+            id:req.body.passthrough
+          }
+        })
+        if(!user) {
+          res.status(404).json({
+            ok:false,
+            data: "user not found"
+          })
+        }
+        return res.status(200).json({
+          ok:true,
+          data:user
+        })
+      } catch (error) {
+        console.log(error);
+        res.status(404).json({
+          ok:false,
+          data:error
+        })
+      }
     }
   }
   
