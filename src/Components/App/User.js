@@ -16,12 +16,15 @@ const User = ( props, userData ) => {
   const [ data, setData ] = useState();
   const [ loading, setLoading ] = useState(true)
   const [ error, setError ] = useState()
+  const [ sliced, setSliced ] = useState();
   useEffect(() => {
     setLoading(true);
     const fetchData = async () => {
       const res = await fetch('/api/User');
       const resJSON = await res.json();
       setData(resJSON);
+      // const sliced = await data.data.slice(0, 3);
+      // console.log(sliced);
       setLoading(false);
     }
     fetchData();

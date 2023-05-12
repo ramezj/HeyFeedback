@@ -35,14 +35,14 @@ const SendFeedback = () => {
     whileHover={{
         scale:1.1
     }}
-    className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700">
+    className="w-full max-w-md p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700">
     <h1 className="font-extrabold text-2xl">Tell us anything</h1>
     <br></br>
-    <input type="text" className="input border-none outline-none focus:border-none focus:outline-none bg-[#0c0c0c] w-full max-w-xs font-bold" 
+    <input type="text" className="input border-none outline-none focus:border-none focus:outline-none bg-[#0c0c0c] w-full max-w-md font-bold" 
     value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Ali@Instatus.com'
     />
     <br></br><br></br>
-    <textarea placeholder="We would love to hear your feedback" rows="3" className="textarea textarea-bordered textarea-sm w-full max-w-xs bg-[#0c0c0c] outline-none border-none font-bold focus:border-none focus:outline-none"
+    <textarea placeholder="We would love to hear your feedback" rows="3" className="textarea textarea-bordered textarea-sm w-full max-w-md bg-[#0c0c0c] outline-none border-none font-bold focus:border-none focus:outline-none"
     value={body} onChange={(e) => setBody(e.target.value)}/>
     <br></br><br></br>
     <div className="space-x-4">
@@ -56,18 +56,18 @@ const SendFeedback = () => {
     <button 
     type="button" 
     className="shadow-md
-    text-indigo-100 
-    bg-indigo-600 
+    text-gray-900 bg-white 
     focus:outline-none
     focus:ring-none 
-    font-bold 
+    font-extrabold 
     rounded-lg 
     text-lg 
     px-14 py-3 
     text-center 
     mr-4 mt-4 
-    hover:bg-indigo-500 
-    duration-500"
+    hover:bg-gray-200 
+    duration-500
+    "
     onClick={sendRequest}
     >
     {send}

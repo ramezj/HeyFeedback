@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .backgroundImg {
-  background: url("./graph.svg"), linear-gradient(rgb(3 7 18), rgb(48, 1, 113), rgb(3 7 18));
+  background: url("./graph.svg"), linear-gradient(rgb(3 7 18), rgb(67, 56, 202), rgb(3 7 18));
   opacity:0.02
   /* background: linear-gradient(rgb(3 7 18), #300171, rgb(3 7 18)); */
   /* background-image: url("./graph.svg") */

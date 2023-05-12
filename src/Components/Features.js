@@ -14,7 +14,7 @@ const Features = () => {
       duration:1.5
     }}
     class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
-        <motion.div class="bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12 mb-8 shadow-2xl shadow-indigo-500/30"
+        <motion.div class="bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12 mb-8 shadow shadow-xl "
         whileHover={{
             scale:1.05
         }}
@@ -30,7 +30,7 @@ const Features = () => {
             <Button title="Get Started"/>
         </motion.div>
         <div class="grid md:grid-cols-2 gap-8">
-            <motion.div class="shadow-2xl shadow-indigo-500/30 bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12" 
+            <motion.div class="shadow shadow-xl bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:bg-gray-800 border-none rounded-lg p-8 md:p-12" 
             whileHover={{
                 scale:1.05
             }}>
@@ -44,7 +44,7 @@ const Features = () => {
                 <p class="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.</p>
                 <Button title="Get Started"/>
             </motion.div>
-            <motion.div class="shadow-2xl shadow-indigo-500/30 bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] border-none rounded-lg p-8 md:p-12"
+            <motion.div class="shadow shadow-xl bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] border-none rounded-lg p-8 md:p-12"
             whileHover={{
                 scale:1.05
             }}
