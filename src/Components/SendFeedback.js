@@ -4,12 +4,12 @@ import { motion, useInView } from 'framer-motion'
 const SendFeedback = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once:true});
-    const [ send, setSend ] = useState("Send Feedback")
+    const [ send, setSend ] = useState("Send")
     const [ body, setBody ] = useState("");
     const [ email, setEmail ] = useState("");
     const [ rating, setRating ] = useState(1);
     const sendRequest = async () => {
-        setSend("🚀 Sending Feedback");
+        setSend("🚀 Sending");
         const res = await fetch('/api/receive?id=644c3ead88e5896ba0194013', {
             method:'POST',
             headers: {
