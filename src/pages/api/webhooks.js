@@ -39,5 +39,23 @@ export default async function handler(req, res) {
         })
       }
     }
+    if (req.body.alert_name == "subscription_cancelled") {
+      try {
+        const user = await prisma.user.update({
+          where: {
+            id:req.body.passthrough
+          },
+          isSubscribed:false,
+          subscription_id: "",
+          subscription_update_url:"",
+          subscription_cancel_url:"",
+        });
+        if(user) {
+          console.log("Cancelled Subscription Successfully!");
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
   }
   
