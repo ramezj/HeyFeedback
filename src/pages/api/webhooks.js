@@ -41,11 +41,23 @@ export default async function handler(req, res) {
     }
     if (req.body.alert_name == "subscription_cancelled") {
       try {
-        const userCancel = await prisma.user.findUnique({
+        const userCancel = await prisma.user.update({
           where: {
             id: req.body.passthrough
+          },
+          data: {
+            isSubscribed:false,
+            subscription_id:"",
+            subscription_update_url:"",
+            subscription_cancel_url:"",
           }
         });
+        if(!userCancel) {
+          return res.status(400).json({
+            ok:false,
+            data: "Couldn't Unsubscribe User.."
+          })
+        }
         return res.status(200).json({
           ok:true,
           data:userCancel
