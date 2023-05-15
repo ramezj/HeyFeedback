@@ -50,11 +50,21 @@ export default async function handler(req, res) {
           subscription_update_url:"",
           subscription_cancel_url:"",
         });
-        if(user) {
-          console.log("Cancelled Subscription Successfully!");
+        if(!user) {
+          res.status(404).json({
+            ok:false,
+            data: "Couldn't unsubscribe.."
+          })
         }
+        return res.status(200).json({
+          ok:true,
+          data:user
+        })
       } catch (error) {
-        console.log(error);
+        res.status(404).json({
+          ok:false,
+          data:error
+        })
       }
     }
   }
