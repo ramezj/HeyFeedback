@@ -40,6 +40,23 @@ export default async function handler(req, res) {
       }
     }
     if (req.body.alert_name == "subscription_cancelled") {
+      try {
+        const userCancel = await prisma.user.findUnique({
+          where: {
+            id: req.body.passthrough
+          }
+        });
+        return res.status(200).json({
+          ok:true,
+          data:userCancel
+        })
+      } catch (error) {
+        console.error(error);
+        res.status(401).json({
+          ok:false,
+          data:error
+        })
+      }
       console.log(req.body);
     }
   }
