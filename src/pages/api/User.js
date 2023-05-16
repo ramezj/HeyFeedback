@@ -9,6 +9,9 @@ export default async function handler(req, res) {
         const userFeedbacks = await prisma.feedback.findMany({
             where: {
                 userId: session.user.id
+            },
+            orderBy: {
+                createdAt: "desc"
             }
         })
         const userInfo = await prisma.user.findUnique({
