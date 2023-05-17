@@ -57,27 +57,6 @@ const SendFeedback = () => {
     <button className="shadow-lg rounded-3xl text-4xl">😊</button>
     </div>
     <br></br>
-    {/* <button 
-    type="button" 
-    className="shadow-md
-    text-gray-900 bg-white 
-    focus:outline-none
-    focus:ring-none 
-    font-extrabold 
-    rounded-lg 
-    text-lg 
-    px-14 py-3 
-    text-center 
-    mr-4 mt-4 
-    hover:bg-gray-200 
-    duration-500
-    "
-    onClick={sendRequest}
-    >
-      <svg class="animate-spin h-5 w-5 mr-3 fill-black" fill='black' viewBox="0 0 24 24">
-  </svg>
-    {send}
-    </button> */}
     <button onClick={sendRequest} type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-lg text-lg font-bold px-14 py-3 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center">
     {
       loading ? 

@@ -55,7 +55,7 @@ const User = ( props, userData ) => {
         return (
           <> 
           <motion.div whileHover={{scale:1.1}}
-            className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700 items-center">
+            className="w-full max-w-sm p-8 bg-form rounded-lg shadow-lg dark:bg-gradient-to-br from-[#1d1d1d] to-[#0c0c0c] dark:border-gray-700 content-center">
                <a href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
                 </a>
                 <div href="#" class="bg-green-100 text-green-800 text-md font-bold inline-flex items-center px-2.5 space-x-3 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2">
@@ -65,7 +65,7 @@ const User = ( props, userData ) => {
     <br></br>
           <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{x.email}</h5>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{x.body}</p>
-          <Button title="Reply With email" onClick={() => {window.location = "mailto:" + x.email}}/>
+          <Button title="✉️ Reply With email" onClick={() => {window.location = "mailto:" + x.email}}/>
           </motion.div>
           </>
         )
