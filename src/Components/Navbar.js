@@ -41,7 +41,7 @@ const Navbar = () => {
             <>
             <div className="navbar bg-bg-transparent">
   <div className="navbar-start">
-    <a className="btn btn-ghost normal-case text-2xl mt-4 ml-4 font-bold">🚀 HeyFeedback</a>
+  <Link className="btn btn-ghost normal-case text-2xl mt-4 ml-4 font-bold" href="/">🚀 HeyFeedback</Link>
   </div>
   <div className="navbar-end">
   <motion.button onClick={() => {signIn("google", { callbackUrl: '/App' })}} className="shadow-md
@@ -52,7 +52,7 @@ const Navbar = () => {
     font-bold 
     rounded-lg 
     text-lg 
-    px-10 py-2.5 
+    px-6 py-2.5 
     text-center 
     mr-4 mt-4 
     hover:bg-indigo-500 
